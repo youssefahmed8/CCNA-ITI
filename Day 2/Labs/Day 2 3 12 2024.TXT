@@ -1,0 +1,189 @@
+Day 2:
+=====
+OSI  RM
+
+ports
+65536
+
+0  1023
+
+HTTP   80
+HTTPS   443
+TELNET SSH    22   23
+SMTP   25
+DNS   53
+DHCP   67    68
+FTP   20   21
+
+
+1024   49151    Register
+
+
+
+49152    56535   Random
+
+
+
+
+MAC
+
+48 bit
+12 digit
+hexa
+
+
+
+
+CMD== GETMAC     IPCONFIG/all
+
+
+
+MAC add table
+
+port num       MAC device
+
+f0/1                     a
+f0/2                          b
+
+
+operation Switch:
+=============
+Flooding
+BC
+FW
+Lisn
+Learn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VTY:
+====
+
+Telnet
+          telnet   IP
+
+SSH
+        ssh -L  user IP
+
+
+Switch(config)#int
+Switch(config)#interface v
+Switch(config)#interface vlan 1
+Switch(config-if)#no shut
+
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+
+Switch(config-if)#ip add 192.168.1.10 255.255.255.0
+
+Switch(config)#user
+Switch(config)#username iti pass 123
+
+
+Switch(config)#lin
+Switch(config)#line vt
+Switch(config)#line vty 0 4
+Switch(config-line)#login local
+
+
+SSH  user and pass
+         a-change host name than default name
+         b-domain anme (IP domain-name   iti.com)
+
+
+
+
+
+
+VLAN:
+=====
+Virtaul LAN
+
+ID Valn  1     1001      4096
+name     VLAN0020
+
+Creat VLAN:
+==========
+SYSadmin>en
+Password: 
+SYSadmin#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+SYSadmin(config)#v
+SYSadmin(config)#vla
+SYSadmin(config)#vlan 10
+SYSadmin(config-vlan)#na
+SYSadmin(config-vlan)#name IT
+SYSadmin(config-vlan)#exi
+SYSadmin(config)#int
+SYSadmin(config)#interface f0/1
+SYSadmin(config-if)#sw
+SYSadmin(config-if)#switchport ac
+SYSadmin(config-if)#switchport access v
+SYSadmin(config-if)#switchport access vlan 10
+SYSadmin(config-if)#
+
+
+
+
+RAM     runn-conf
+NVRAM     start-conf
+
+
+
+port mode:
+
+
+
+Access     only One Vlan
+Trunk       all Vlan
+
+DTP
+VT
+Dyanmic Auto
+Dyanmic Desirable 
+
+VTP
+Mode 
+server
+client 
+trnsparant
+domain   iti.com
+pass 
+
+SYSadmin(config)#vt
+SYSadmin(config)#vtp m
+SYSadmin(config)#vtp mode se
+SYSadmin(config)#vtp mode server 
+Device mode already VTP SERVER.
+SYSadmin(config)#vt
+SYSadmin(config)#vtp dom
+SYSadmin(config)#vtp domain iti.com
+Changing VTP domain name from NULL to iti.com
+SYSadmin(config)#vt
+SYSadmin(config)#vtp pas
+SYSadmin(config)#vtp password 123
+Setting device VLAN database password to 123
+SYSadmin(config)#
+
+
+
+
+
+
+
+
+
