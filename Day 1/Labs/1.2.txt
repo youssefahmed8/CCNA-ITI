@@ -1,0 +1,40 @@
+Which command will display the current contents of non-volatile random-access memory (NVRAM)?
+
+show startup-config
+
+
+Why does the switch respond with startup-config is not present?
+
+because the switch isn't preconfigured
+
+Why is the login command required?
+
+
+to activate the password
+
+
+When will this banner be displayed?
+
+when you try to login to the switch in the beginning
+
+Why should every switch have a MOTD banner?
+
+to give information about what is this switch used for and who is the authorized users
+
+
+What is the shortest, abbreviated version of the copy running-config startup-config command?
+
+
+copy run start
+
+Which command will display the contents of NVRAM? 
+
+show startup-config
+
+Are all the changes that were entered recorded in the file?
+
+Yes 
+
+If you configure any more passwords on the switch, will they be displayed in the configuration file as plain text or in encrypted form? Explain why?
+
+No

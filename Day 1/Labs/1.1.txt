@@ -1,0 +1,19 @@
+    Answer the following questions:
+
+How many FastEthernet interfaces does the switch have?
+
+24
+
+How many Gigabit Ethernet interfaces does the switch have?
+
+2
+
+What is the range of values shown for the vty lines?
+0 4
+5 15
+
+
+
+
+
+
