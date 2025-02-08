@@ -1,0 +1,72 @@
+Day 4:
+=====
+
+Routing ((Static  Dyanmic)
+
+1-Static
+Router Config:
+============
+Basic config
+Hostname
+Clock
+Interface
+Consol
+VTY
+Banner
+Save
+==
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int r g0/0-2
+Router(config-if-range)#no shu
+
+Router(config)#ip route 192.168.5.0 255.255.255.0 192.168.8.20
+Router(config)#ip route 192.168.6.0 255.255.255.0 192.168.8.20
+
+Router(config-if-range)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to up
+
+Router(config-if-range)#int g0/0
+Router(config-if)#ip add 192.168.7.10 255.255.255.0
+Router(config-if)#int g0/1
+Router(config-if)#ip add 192.168.1.10 255.255.255.0
+Router(config-if)#int g0/2
+Router(config-if)#ip add 192.168.2.10 255.255.255.0
+Router(config-if)#
+
+Daynmic(( Protocol Routing)):
+=======
+Interior  ((RIP,EIGRP,OSPF))                Extrior   ((BGP))
+
+AS
+AD(RIP  120   EIGRP  90   OSPF  110))
+
+Metric
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Routed((IP
