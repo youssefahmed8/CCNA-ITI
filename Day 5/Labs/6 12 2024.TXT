@@ -1,0 +1,121 @@
+Daynmic Route
+Routing Protocol:
+==============
+AS
+AD
+Metric
+
+RIP
+224.0.0.9
+30 sec
+AD  120
+
+Metric  Num of hop     15 
+
+Poisioning table
+split horizon
+trigger update
+
+
+Passive interface
+==
+Router(config)#r
+Router(config)#router r
+Router(config)#router rip 
+Router(config-router)#ne
+Router(config-router)#network 192.168.30.0
+Router(config-router)#network 192.168.40.0
+Router(config-router)#pas
+Router(config-router)#passive-interface g0/2
+Router(config-router)#exi
+
+EIGRP:
+======
+
+AD  90
+Num AS
+224.0.0.10
+90 sec
+wild card
+Metric
+
+OSPF
+=====
+
+AD  110
+224.0.0.5     224.0.0.6 
+Wild card
+metric         10^8/BW
+LSA
+LSU
+LSDB
+Area   Backbone area Zero
+ID
+ABR
+
+Election OSPF:
+============
+DR
+BDR
+
+
+Startup 40 sec
+priority   ((0  255))     1
+ID
+Loopback ((virtaul interface))
+IP physical
+
+
+
+Porcees ID
+
+router ospf  P ID 
+==
+Router(config)#ro
+Router(config)#router o
+Router(config)#router ospf 10
+Router(config-router)#net
+Router(config-router)#network 192.168.20.0 0.0.0.255 a 0
+Router(config-router)#
+01:24:26: %OSPF-5-ADJCHG: Process 10, Nbr 192.168.20.100 on GigabitEthernet0/0 from LOADING to FULL, Loading Done
+
+Router(config-router)#network 192.168.30.0 0.0.0.255 a 0
+Router(config-router)#
+
+
+==
+Router(config)#ro
+Router(config)#router os
+Router(config)#router ospf 10
+Router(config-router)#net 192.168.50.0 0.0.0.255 a 0
+Router(config-router)#net 192.168.60.0 0.0.0.255 a 1
+Router(config-router)#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
