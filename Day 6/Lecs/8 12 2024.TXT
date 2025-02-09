@@ -1,0 +1,130 @@
+DHCP:
+====
+Dyanmic Host configuration Protocol
+
+67  68
+
+Function:
+=======
+Distribute TCP/IP
+
+Devices:
+=======
+Router
+Server
+Firwall
+Access point
+
+Mechanism:
+==========
+DORA
+
+Discover     Client   BC
+Offer           Server
+Request    Client
+Ack           Server
+
+
+config:   Pool name
+=====
+Range    start IP  192.168.1.2
+              end   IP  192.168.1.5
+IP dhcp excluded add 192.168.1.1  192.1681.10
+Network 192.168.1.0 255.255.255.192
+Default-router  192.168.1.1
+Dns-server  8.8.8.8
+
+lease time:
+========
+
+Renew
+
+Reservation:
+==========
+
+IP to MAC  
+
+Filter:      MAC
+-====
+Deny  dddd
+Allow
+
+
+Command:
+=========
+
+
+Router(config)#ip dhc
+Router(config)#ip dhcp ex
+Router(config)#ip dhcp excluded-address 192.168.1.1 192.168.1.10
+Router(config)#ip dh
+Router(config)#ip dhcp p
+Router(config)#ip dhcp pool ITI
+Router(dhcp-config)#net
+Router(dhcp-config)#network 192.168.1.0 255.255.255.0
+Router(dhcp-config)#def
+Router(dhcp-config)#default-router 192.168.1.200
+Router(dhcp-config)#dns
+Router(dhcp-config)#dns-server 8.8.8.8
+Router(dhcp-config)#
+==
+Router(config)#int g0/1
+Router(config-if)#ip help
+Router(config-if)#ip helper-address 192.168.3.10
+Router(config-if)#
+
+Inter-VLAN Routing:
+================
+Router(config-subif)#exi
+Router(config)#int g0/2.20
+Router(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/2.20, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2.20, changed state to up
+
+Router(config-subif)#encapsulation dot1Q 20
+Router(config-subif)#ip add 192.168.2.100 255.255.255.0
+Router(config-subif)#
+
+===
+Switch(config-if)#sw
+Switch(config-if)#no switchport 
+Switch(config-if)#ip add 192.168.1.200 255.255.255.0
+Switch(config-if)#exi
+Switch(config)#ip routing
+Switch(config)#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
