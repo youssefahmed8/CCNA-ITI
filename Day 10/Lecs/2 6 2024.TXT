@@ -1,0 +1,147 @@
+Last Day:
+=======
+1-WAN
+
+a-ADSL             SDSL        VDSL  300 MB
+b-3G  4G   5G   
+3-leased line    GB
+4-VPN(a-Remote access(client to server)   b-site To site)
+5-Frame-relay
+
+
+
+
+
+PPP
+HDLC
+
+
+
+DCE
+DTE
+Router#sh int s0/3/1
+Serial0/3/1 is up, line protocol is down (disabled)
+  Hardware is HD64570
+  Internet address is 192.168.3.2/24
+  MTU 1500 bytes, BW 1544 Kbit, DLY 20000 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation PPP
+Router(config)#int s0/3/0
+Router(config-if)#enc
+Router(config-if)#encapsulation pp
+Router(config-if)#encapsulation ppp 
+
+
+Router(config-if)#pp
+Router(config-if)#ppp a
+Router(config-if)#ppp authentication p
+Router(config-if)#ppp authentication pap 
+Router(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/3/0, changed state to down
+
+Router(config-if)#
+Router(config-if)#exi
+Router(config)#hos
+Router(config)#hostname Alex
+Alex(config)#use
+Alex(config)#username Menia pass 123
+
+
+
+
+
+
+
+
+
+
+Router(config)#hos
+Router(config)#hostname Sohag
+Sohag(config)#user
+Sohag(config)#username iti pass 123
+Sohag(config)#int s0/2/0
+Sohag(config-if)#ppp au
+Sohag(config-if)#ppp authentication p
+Sohag(config-if)#ppp authentication pap 
+Sohag(config-if)#
+
+
+
+
+
+
+
+
+
+
+2-CDP,LLDP,
+
+Cinfig)#cdp run
+            no cdp run
+
+config-If)#cdp enable 
+
+NTP:
+=====
+
+Matser
+AAA#clock se
+AAA#clock set 10:48:34 2 jun 2024
+AAA#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+AAA(config)#nt
+AAA(config)#ntp m
+AAA(config)#ntp master 
+
+
+
+with CNTL/Z.
+BBB(config)#nt
+BBB(config)#ntp ser
+BBB(config)#ntp server 20.0.0.2
+BBB(config)#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3-Automation
+
+Traditional network
+
+SDN
+
+Mangemenet Plan
+Control Plan
+Data Plan
+
+
+
+
+
+
+
+
+
+
+
+
+4-Radius
+
+
+ITI(config)#aaa new-model
+ITI(config)#aaa authentication login default group radius local 
+ITI(config)#line vty 0 4
+ITI(config)#line vty 0 4
+ITI(config-line)#login authentication default 
+ITI(config-line)#exi
+ITI(config)#radius-server host 192.168.1.100 key 123456
